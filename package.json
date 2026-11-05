@@ -17,7 +17,8 @@
     "start": "node app.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "node --check app.js"
   },
   "keywords": [],
   "devDependencies": {
