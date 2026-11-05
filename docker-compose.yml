@@ -1,0 +1,6 @@
+services:
+  nodejs-app:
+    image: ${DOCKERHUB_USER}/nodejs-app:${IMAGE_TAG:-latest}
+    container_name: nodejs-app
+    ports:
+      - "3000:3000"

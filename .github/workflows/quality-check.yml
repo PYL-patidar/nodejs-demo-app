@@ -1,0 +1,44 @@
+# & steps quality and security checks 
+name: Code Quality
+
+on:
+  workflow-call:
+
+jobs:
+  quality-check:
+    name: Run Quality & Security Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Fetch the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js with caching enabled for faster subsequent runs
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '26' # Specify your required Node version
+          cache: 'npm'
+
+      # Step 3: Install dependencies exactly as defined in package-lock.json
+      - name: Install Dependencies
+        run: npm ci
+
+      # Step 4: Verify code formatting rules
+      - name: Check Formatting (Prettier)
+        run: npm run format:check
+
+      # Step 5: Check code for anti-patterns and potential bugs
+      - name: Run Linter (ESLint)
+        run: npm run lint
+
+      # Step 6: Audit dependencies for known security vulnerabilities
+      - name: Security Vulnerability Scan
+        run: npm audit --audit-level=moderate
+
+      # Step 7: Run the application test suite
+      - name: Run Automated Tests
+        run: npm test
+
+      

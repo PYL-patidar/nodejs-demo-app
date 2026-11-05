@@ -1,0 +1,23 @@
+name: deploy app
+
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v5
+
+      - name: deploy on runner
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker.io docker-compose-v2 -y
+          sudo usermod -aG docker $USER
+          newgrp docker
+          cd nodejs-demo-app
+          docker compose down -v && docker compose up --build -d --force-recreate
+
+
+      
