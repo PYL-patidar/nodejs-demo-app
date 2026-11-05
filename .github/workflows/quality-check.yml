@@ -1,4 +1,4 @@
-# & steps quality and security checks 
+# & steps quality and security checks
 name: Code Quality
 
 on:
@@ -18,8 +18,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '26' # Specify your required Node version
-          cache: 'npm'
+          node-version: "26" # Specify your required Node version
+          cache: "npm"
 
       # Step 3: Install dependencies exactly as defined in package-lock.json
       - name: Install Dependencies
@@ -40,5 +40,3 @@ jobs:
       # Step 7: Run the application test suite
       - name: Run Automated Tests
         run: npm test
-
-      

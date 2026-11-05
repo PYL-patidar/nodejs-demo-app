@@ -16,7 +16,11 @@
   "scripts": {
     "start": "node app.js",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test": "node --test"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "prettier": "^3.9.10"
+  }
 }

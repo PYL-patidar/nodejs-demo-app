@@ -18,6 +18,3 @@ jobs:
           newgrp docker
           cd nodejs-demo-app
           docker compose down -v && docker compose up --build -d --force-recreate
-
-
-      
