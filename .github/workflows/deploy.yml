@@ -16,5 +16,4 @@ jobs:
           sudo apt-get install docker.io docker-compose-v2 -y
           sudo usermod -aG docker $USER
           newgrp docker
-          cd nodejs-demo-app
           docker compose down -v && docker compose up --build -d --force-recreate
