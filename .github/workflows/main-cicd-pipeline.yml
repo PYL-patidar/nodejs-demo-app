@@ -9,12 +9,15 @@ jobs:
     uses: ./.github/workflows/quality-check.yml
 
   build-and-push:
+    needs: [code-quality]
     uses: ./.github/workflows/build-and-push.yml
     secrets: inherit
 
   image-scan:
+    needs: [build-and-push]
     uses: ./.github/workflows/image-scan.yml
     secrets: inherit
 
   deploy:
+    needs: [image-scan]
     uses: ./.github/workflows/deploy.yml
