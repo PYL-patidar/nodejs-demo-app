@@ -149,9 +149,9 @@ docker stop nodejs-app
 
 The following repository secrets are used for Docker Hub authentication and image configuration:
 
-| Secret | Purpose |
-|---|---|
-| `DOCKERHUB_USER` | Docker Hub username |
+| Secret            | Purpose                 |
+| ----------------- | ----------------------- |
+| `DOCKERHUB_USER`  | Docker Hub username     |
 | `DOCKERHUB_TOKEN` | Docker Hub access token |
 
 Secrets are configured under:
