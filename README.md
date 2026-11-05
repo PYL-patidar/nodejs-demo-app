@@ -2,13 +2,13 @@
 
 A sample Node.js application demonstrating an automated CI/CD pipeline using GitHub Actions, Docker, and Docker Hub.
 
-The project automates code validation, Docker image creation, image publishing, and container deployment using a reusable GitHub Actions workflow.
+This project automates code validation, Docker image creation, image publishing, and container deployment using GitHub Actions reusable workflows.
 
 ## 🚀 Project Overview
 
-The objective of this project is to understand and implement an automated CI/CD workflow for a Node.js application.
+The objective of this project is to implement an automated CI/CD workflow for a Node.js application.
 
-Whenever code is pushed to the `main` branch, the CI/CD pipeline performs the configured validation and deployment stages.
+The pipeline performs code validation, testing, Docker image building, image publishing, and container deployment through configured GitHub Actions workflows.
 
 ## 🛠️ Technologies Used
 
@@ -17,7 +17,7 @@ Whenever code is pushed to the `main` branch, the CI/CD pipeline performs the co
 - **Git & GitHub** – Source code management
 - **GitHub Actions** – CI/CD automation
 - **Prettier** – Code formatting validation
-- **Node.js Test Runner** – Basic application testing
+- **Node.js Test Runner** – Basic automated testing
 - **Docker** – Application containerization
 - **Docker Compose** – Container management
 - **Docker Hub** – Docker image registry
@@ -48,13 +48,11 @@ nodejs-demo-app/
 
 The application is developed using Node.js and its built-in HTTP module.
 
-It runs on port `3000` and displays a simple welcome page in the browser.
+It runs on port `3000` and displays a welcome page in the browser.
 
-**Application URL (local):**
+**Local Application URL:**
 
-```text
-http://localhost:3000
-```
+`http://localhost:3000`
 
 ## 🔄 CI/CD Pipeline Workflow
 
@@ -179,25 +177,25 @@ The host port `3000` is mapped to the container port `3000`.
 
 ## ▶️ Run the Application Locally
 
-Clone the repository:
+**Clone the repository:**
 
 ```bash
 git clone https://github.com/PYL-patidar/nodejs-demo-app.git
 ```
 
-Navigate into the project:
+**Navigate into the project:**
 
 ```bash
 cd nodejs-demo-app
 ```
 
-Install dependencies:
+**Install dependencies:**
 
 ```bash
 npm install
 ```
 
-Run the application:
+**Run the application:**
 
 ```bash
 npm start
@@ -205,9 +203,7 @@ npm start
 
 Open your browser:
 
-```text
-http://localhost:3000
-```
+`http://localhost:3000`
 
 ## 🎯 Learning Outcomes
 
