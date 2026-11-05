@@ -2,7 +2,7 @@
 name: Code Quality
 
 on:
-  workflow-call:
+  workflow_call:
 
 jobs:
   quality-check:
