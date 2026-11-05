@@ -10,13 +10,14 @@ jobs:
       - name: code checkout
         uses: actions/checkout@v5
 
-      - name: deploy on runner
-        env:
-          DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
-        run: |
-          sudo apt-get update
+      - name: Install Docker
+        uses:  sudo apt-get update
           sudo apt-get install docker.io docker-compose-v2 -y
           sudo usermod -aG docker $USER
           newgrp docker
 
-          docker compose down -v && docker compose up --build -d --force-recreate
+      - name: Deploy application
+        env:
+          DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+          IMAGE_TAG: latest
+        run: docker compose down -v && docker compose up --build -d --force-recreate
